@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <nav><Meal class="logo"><img src="logo.svg" height="30px" width="80px" alt="logo">Meal Planner</div></nav>
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+    </div>
+    <div class="container">
+        <form id="mealForm">
+            <div class="row">
+                <div class="col"><input type="number" id="height" placeholder="Enter Height in CM" required></div>
+                <div class="col"><input type="number" id="weight" placeholder="Enter Weight" required></div>
+                <div class="col"><input type="number" id="age" placeholder="Enter Age" required></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <select id="gender" required>
+                        <option disabled selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select id="activityLevel" required>
+                        <option disabled selected>Activity Level</option>
+                        <option value="1">Light</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Active</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rows">
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" class="button-generate" id="generateMeal" value="Generate Meals">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="err"></div>
+        <div class="card-container" id="mealList"></div>
+        <div class="details-box" id="details-box">
+            <div class="tab">
+                <button class="tablink active" onclick="openTab(event,'ingredient')">INGREDIENT</button>
+                <button class="tablink" onclick="openTab(event,'steps')">STEPS</button>
+                <button class="tablink" onclick="openTab(event,'equipment')">EQUIPMENT</button>
+            </div>
+            <div id="ingredient" class="w3-red tabcontent data"></div>
+            <div id="steps" class="w3-red tabcontent data" style="display:none"></div>
+            <div id="equipment" class="w3-red tabcontent data" style="display:none"></div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
